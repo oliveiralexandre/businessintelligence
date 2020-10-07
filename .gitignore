@@ -3,7 +3,6 @@
 /public/hot
 /storage/*.key
 /vendor
-/email.php
 /.idea
 Homestead.json
 Homestead.yaml
