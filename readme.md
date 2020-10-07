@@ -30,4 +30,6 @@ php artisan db:seed
 php artisan db:seed --class=DummyDataSeeder
 ```
 
+## Email
 
+- Renomear o arquivo email -exemplo.php para email.php e ajustar as configurações do servidor smtp.
