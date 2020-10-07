@@ -1,4 +1,4 @@
-<?php
+il<?php
 $Nome		= $_POST["Nome"];	// Pega o valor do campo Nome
 $Email		= $_POST["Email"];	// Pega o valor do campo Email
 $Assunto	= $_POST["Assunto"];	// Pega o valor do campo Assunto
@@ -10,8 +10,8 @@ $Vai 		= "Nome: $Nome\n\nE-mail: $Email\n\nAssunto: $Assunto\n\nMensagem: $Mensa
 
 require_once("phpmailer/class.phpmailer.php");
 
-define('GUSER', 'atendimento@bisolucoesempresariais.com.br');	// <-- Insira aqui o seu GMail
-define('GPWD', 'Atendimento123');		// <-- Insira aqui a senha do seu GMail
+define('GUSER', 'email');	// <-- Insira aqui o seu GMail
+define('GPWD', 'senha');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
 	global $error;
@@ -21,7 +21,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 	$mail->SMTPAuth = true;		// Autenticação ativada
 	$mail->SMTPSecure = false;	// SSL REQUERIDO pelo GMail
 	$mail->SMTPAutoTLS = false;
-	$mail->Host = 'smtp.bisolucoesempresariais.com.br';	// SMTP utilizado
+	$mail->Host = 'smtp.dominio.com.br';	// SMTP utilizado
 	$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
 	$mail->Username = GUSER;
 	$mail->Password = GPWD;
@@ -40,7 +40,7 @@ function smtpmailer($para, $de, $de_nome, $assunto, $corpo) {
 
 // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER), o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
 
- if (smtpmailer('atendimento@bisolucoesempresariais.com.br', 'atendimento@bisolucoesempresariais.com.br', 'Contato', 'Mensagem do Site Business Intelligence', $Vai)) {
+ if (smtpmailer('email@', 'email@', 'Contato', 'Mensagem do Site', $Vai)) {
 	
 	Header("location:/obrigado"); // Redireciona para uma página de obrigado.
 }
