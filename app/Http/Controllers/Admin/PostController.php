@@ -80,7 +80,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, Request $request)
     {
         if ($post->user_id != auth()->user()->id && auth()->user()->is_admin == false) {
             flash()->overlay("Você não pode editar a postagem de outras pessoas.");
@@ -90,6 +90,19 @@ class PostController extends Controller
 
         $categories = Category::pluck('name', 'id')->all();
         $tags = Tag::pluck('name', 'name')->all();
+
+        $file = $request->file('imagem');
+    	if($file){
+    		$rand = rand(11111,99999);
+    		$diretorio = "img/blog/".str_slug($dados['titulo'],'_')."/";
+    		$ext = $file->guessClientExtension();
+    		$nomeArquivo = "_img_".$rand.".".$ext;
+    		$file->move($diretorio,$nomeArquivo);
+    		$post->imagem = $diretorio.'/'.$nomeArquivo;
+    	}
+
+        
+        $post ->update();
 
         return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }

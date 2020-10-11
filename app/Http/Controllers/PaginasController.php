@@ -7,7 +7,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use App\Models\Comment;
-use App\Models\Post;
+use App\Models\Blog;
 use App\Models\Tag;
 use App\Models\About;
 use App\Models\Servico;
@@ -15,14 +15,25 @@ use App\Models\Destaque;
 
 class PaginasController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $blogs = Blog::when($request->search, function ($query) use ($request) {
+            $search = $request->search;
+
+            return $query->where('titulo', 'like', "%$search%")
+                            ->orWhere('descricao', 'like', "%$search%");
+        })->with('tags', 'category', 'user')
+                    ->withCount('comments')
+                    ->published()
+                    ->simplePaginate(3);
+
+
         $destaques = DB::table('destaques')->paginate(3);
-        return view('site.index', compact('destaques'));
+        return view('site.index', compact('destaques','blogs'));
     }
     public function noticias(Request $request)
     {
-        $posts = Post::when($request->search, function ($query) use ($request) {
+        $blogs = Blog::when($request->search, function ($query) use ($request) {
             $search = $request->search;
 
             return $query->where('title', 'like', "%$search%")
@@ -32,7 +43,7 @@ class PaginasController extends Controller
                     ->published()
                     ->simplePaginate(3);
 
-        return view('site.noticias', compact('posts'));
+        return view('site.noticias', compact('blogs'));
         
     }
     public function contato()
@@ -65,27 +76,36 @@ class PaginasController extends Controller
 
         return view('frontend.destaque', compact('destaque'));
     }
-    public function teste(Request $request)
+    public function blog(Request $request)
     {
-        $posts = Post::when($request->search, function ($query) use ($request) {
+        $categories = Category::withCount('blogs')->paginate(10);
+
+        $blogs = Blog::when($request->search, function ($query) use ($request) {
             $search = $request->search;
 
-            return $query->where('title', 'like', "%$search%")
-                            ->orWhere('body', 'like', "%$search%");
+            return $query->where('titulo', 'like', "%$search%")
+                            ->orWhere('descricao', 'like', "%$search%");
         })->with('tags', 'category', 'user')
                     ->withCount('comments')
                     ->published()
                     ->simplePaginate(3);
 
-        return view('site.teste', compact('posts'));
-
-        /*$destaques = DB::table('destaques')->paginate(3);
-        return view('site.teste', compact('destaques'));*/
-
+        return view('site.blog', compact('blogs','categories' ));
     }
-    public function apple()
+    public function blogs(Blog $blog)
     {
-        return view('site.apple');
+        $blog = $blog->load(['user']);
+
+        return view('frontend.blog', compact('blog'));
+    }
+
+    public function post(Blog $blog)
+    {
+        $categories = Category::withCount('blogs')->paginate(10);
+
+        $blog = $blog->load(['user']);
+
+        return view('frontend.blog', compact('blog','categories' ));
     }
 
 }

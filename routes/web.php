@@ -14,18 +14,18 @@
 //*** SITE ***
 
 Route::get('/', 'PaginasController@index');
-Route::get('/destaques/{destaque}', 'PaginasController@destaque');
-Route::get('/blog', 'PaginasController@noticias');
-Route::get('/teste', 'PaginasController@teste');
-Route::get('/apple', 'PaginasController@apple');
-Route::get('/servicos', 'PaginasController@servicos');
-Route::get('/servicos/{servico}', 'PaginasController@servico');
-Route::get('/sobre', 'PaginasController@sobre');
-Route::get('/contato', 'PaginasController@contato');
+//Route::get('/destaques/{destaque}', 'PaginasController@destaque');
+
+Route::get('/blog', 'PaginasController@blog');
+
+//Route::get('/servicos', 'PaginasController@servicos');
+//Route::get('/servicos/{servico}', 'PaginasController@servico');
+//Route::get('/sobre', 'PaginasController@sobre');
+//Route::get('/contato', 'PaginasController@contato');
 Route::get('/obrigado', 'PaginasController@obrigado');
-Route::get('/noticias', 'BlogController@index');
-Route::get('/noticias/{post}', 'BlogController@post');
-Route::post('/posts/{post}/comment', 'BlogController@comment')->middleware('auth');
+//Route::get('/noticias', 'BlogController@index');
+Route::get('/blog/{blog}', 'BlogController@blog');
+//Route::post('/blogs/{post}/comment', 'BlogController@comment')->middleware('auth');
 
 
  //*** PAINEL ADMINISTRAÇÃO ***
@@ -63,4 +63,55 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::get('/destaques',['as'=>'admin.destaques', 'uses'=>'DestaquesController@index']);
 	Route::get('/destaques/editar/{id}',['as'=>'admin.destaques.editar', 'uses'=>'DestaquesController@editar']);
 	Route::put('/destaques/atualizar/{id}',['as'=>'admin.destaques.atualizar', 'uses'=>'DestaquesController@atualizar']);
+
+    //***blog***
+
+	Route::get('/blog',['as'=>'admin.blog', 'uses'=>'BlogController@index']);
+	Route::get('/blog/adicionar',['as'=>'admin.blog.adicionar', 'uses'=>'BlogController@adicionar']);
+	Route::post('/blog/salvar',['as'=>'admin.blog.salvar', 'uses'=>'BlogController@salvar']);
+	Route::get('/blog/editar/{id}',['as'=>'admin.blog.editar', 'uses'=>'BlogController@editar']);
+	Route::put('/blog/atualizar/{id}',['as'=>'admin.blog.atualizar', 'uses'=>'BlogController@atualizar']);
+	Route::get('/blog/deletar/{id}',['as'=>'admin.blog.deletar', 'uses'=>'BlogController@deletar']);
+
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('table-list', function () {
+		return view('pages.table_list');
+	})->name('table');
+
+	Route::get('typography', function () {
+		return view('pages.typography');
+	})->name('typography');
+
+	Route::get('icons', function () {
+		return view('pages.icons');
+	})->name('icons');
+
+	Route::get('map', function () {
+		return view('pages.map');
+	})->name('map');
+
+	Route::get('notifications', function () {
+		return view('pages.notifications');
+	})->name('notifications');
+
+	Route::get('rtl-support', function () {
+		return view('pages.language');
+	})->name('language');
+
+	Route::get('upgrade', function () {
+		return view('pages.upgrade');
+	})->name('upgrade');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});
+

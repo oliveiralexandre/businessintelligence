@@ -2,42 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::when($request->search, function ($query) use ($request) {
+        $blogs = Blog::when($request->search, function ($query) use ($request) {
             $search = $request->search;
 
-            return $query->where('title', 'like', "%$search%")
-                            ->orWhere('body', 'like', "%$search%");
+            return $query->where('titulo', 'like', "%$search%")
+                            ->orWhere('descricao', 'like', "%$search%");
         })->with('tags', 'category', 'user')
                     ->withCount('comments')
                     ->published()
                     ->simplePaginate(5);
 
-        return view('frontend.index', compact('posts'));
+        return view('frontend.index', compact('blogs'));
     }
 
-    public function post(Post $post)
+    public function blog(Blog $blog)
     {
-        $post = $post->load(['comments.user', 'tags', 'user', 'category']);
+        $blog = $blog->load(['comments.user', 'tags', 'user', 'category']);
 
-        return view('frontend.post', compact('post'));
+        return view('frontend.blog', compact('blog'));
     }
 
-    public function comment(Request $request, Post $post)
+    public function comment(Request $request, Blog $blog)
     {
-        $this->validate($request, ['body' => 'required']);
+        $this->validate($request, ['descricao' => 'required']);
 
-        $post->comments()->create([
-            'body' => $request->body,
+        $blog->comments()->create([
+            'descricao' => $request->descricao,
         ]);
         flash()->overlay('Comment successfully created');
 
-        return redirect("/posts/{$post->id}");
+        return redirect("/blogs/{$blog->id}");
     }
 }

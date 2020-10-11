@@ -170,8 +170,22 @@ var pirateFormsObject = {"errors":"","spam":{"label":"I'm human!","value":"42591
 
 
 <style type="text/css" id="custom-background-css">
-body.custom-background { background-image: url("img/teste.png"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+body.custom-background{
+    background-image: url('img/mobile.png');
+    background-repeat: no-repeat;
+	background-position: top;	 
+}
+@media (min-width: 1024px) {
+body.custom-background {
+        background-image: url('img/teste.png');
+        background-position: center; 
+		background-size: cover; 
+		background-repeat: no-repeat; 
+		background-attachment: fixed;
+    }
+}
 </style>
+
 		<style type="text/css" id="wp-custom-css">
 			/*
 Você pode adicionar seu próprio CSS aqui.
@@ -230,11 +244,12 @@ Clique no ícone de ajuda acima para saber mais.
 		<center><nav class="navbar navbar-default navbar-fixed-top navbar-color-on-scroll hestia_left navbar-scroll-point navbar-not-transparent">
 				<div class="container">
 			
-				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu-principal" class="nav navbar-nav navbar-right"><li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Home" href="">Home</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="#sobre">Quem Somos</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="#features">Soluções</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Blog" href="#blog">Blog</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="#contact">Contato</a></li>
+				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu-principal" class="nav navbar-nav navbar-right"><li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Home" href="/">Home</a></li>
+				<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="/#features">Soluções</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="/#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
 				<span class="icon-bar"></span>
@@ -244,146 +259,100 @@ Clique no ícone de ajuda acima para saber mais.
 			</button>
 				</div>
 			</nav></center>
-			
-			<div id="carousel-hestia-generic" class="carousel slide" data-ride="carousel">
-			<div class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
-											<div class="item active">
-							<div class="page-header" style="height: 681.3px;">
-																<div class="container">
-																		<div class="row hestia-big-title-content">
-											
-										</div>
-																	</div>
-								<div class="header-filter"></div>
-															</div>
-						</div>
-											</div>
-				</div>
+
+		<div id="primary" class="boxed-layout-header page-header header-small">
+		<div class="container">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+		
+		<div data-parallax="active" class="header-filter"></div>	</div>
+</header>
+<div class="main main-raised">
+	<div class="hestia-blogs">
+		<div class="container">
+			<div class="row">
+								<div class="col-md-8 blog-posts-wrap">
+					
+<article
+		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
+	<div class="row">@foreach($blogs as $blog)
+				<div class="col-md-5">
+			<div class="card-image">
+				<a href="" title="{{ $blog->titulo }}">
+					<img width="360" height="240" src="" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280.jpg 1280w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-300x200.jpg 300w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-768x512.jpg 768w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-1024x682.jpg 1024w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-660x440.jpg 660w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-450x300.jpg 450w" sizes="(max-width: 360px) 100vw, 360px" />				</a>
 			</div>
-					</header></div>
-			
-	<div class="main main-raised">
-	<section class="features hestia-features" id="sobre" data-sorder="hestia_features">
-			            <div class="container">
-				                <div class="row">
-                    <div class="">
-							<h5 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Há 30 anos no mercado, temos como prioridade oferecer as melhores soluções a você e seu negócio.<br>
+		</div>
 
-Atuamos com responsabilidade e profissionalismo de modo personalizado com cada cliente, buscando a solução mais adequada, da maneira mais rápida e menos onerosa possível.<br>
-
-Nossa equipe quer entender seu problema e dar suporte completo, contando com uma vasta e interdisciplinar experiência.<br>
-
-Por isso, estamos em constante aperfeiçoamento, tendo como valores fundamentais o compromisso e a excelência.
-
-Onde quer que você esteja, a Business estará contigo!</h5>
-<img src="img/sobre.jpeg" class="img-fluid" alt="Responsive image">
-						                    </div>
-                </div>
-				<br><br>  <hr/>
-
-		        <section class="features hestia-features" id="features" data-sorder="hestia_features">
-			            <div class="container">
-				                <div class="row">
-                    <div class="">
-						<h2 class="hestia-title">SOLUÇÕES</h2>
-							<h5 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Com a Business Intelligence sua empresa conta com uma rede de profissionais atuantes em diversas áreas para soluções corporativas.<br>
-													Não há necessidade de substituir os administradores, advogados, contadores ou empregados.<br>
-													A Business atua em parceria com os profissionais de sua empresa, otimizando os resultados.</h5>
-						                    </div>
-						<img src="img/servicos.png" class="img-fluid" alt="Responsive image">
-                </div>
-				  <div id="blog"></div><br>  <hr/>
-				<section class="hestia-blogs" data-sorder="hestia_blog">
-						<div class="container">
-								<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-											<h2 class="hestia-title">DESTAQUES</h2>
-																<h5 class="description">Fique por dentro das últimas notícias, atualizações e outros</h5>
-										</div>
+		<div class="col-md-7">
+							<h6 class="category text-info"><a href="http://contecassessoria.com.br/category/estrategia-contabil/" title="Ver todos os posts em Estratégia Contábil" >{{ $blog->category->name }}</a> </h6>
+				<h2 class="card-title entry-title"><a href="http://contecassessoria.com.br/esocial-empresas/" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
+					<p>
+					{{ str_limit($blog->descricao, 100) }}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
 				</div>
-							<div class="hestia-blog-content">
-			<div class="row">				@foreach($destaques as $destaque)<article class="col-md-4 hestia-blog-item">
-					<div class="card card-plain card-blog">
-													<div class="card-image">
-								<a href="" title="{{ $destaque->titulo }}">
-									<img width="360" height="240" src="{{ $destaque->imagem }}" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" </a>
-							</div>
-												<div class="content">
-							<h6 class="category"><a href="" title="Ver todos os posts em Estratégia Contábil"></a> </h6>
-							<h4 class="card-title">
-								<a class="blog-item-title-link" href="" title="{{ $destaque->titulo }}" rel="bookmark">
-								{{ $destaque->titulo }}								</a>
-							</h4>
-							<p class="card-description">{{ $destaque->texto }}	<a class="moretag" href="{{ url("/destaques/{$destaque->id}") }}"> Leia mais…</a></p>
-						</div>
-					</div>
-				</article>
-				@endforeach
-								
-					</div><!-- /.row --><div class="row"></div>			</div>
-										</div>
-											</section>
+				<div class="author">
+					Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
+				</div><br><br><hr><br>
+			</div>	@endforeach
+		</div>
+		<div align="center">
+			{!! $blogs->appends(['search' => request()->get('search')])->links() !!}
+		</div>
+</article>
+				</div>
+					<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1">
+		<aside id="secondary" class="blog-sidebar" role="complementary">
+			<div id="search-2" class="widget widget_search">{!! Form::open(['method' => 'GET', 'role' => 'form']) !!}
+				<div class="col-md-13">
+					{!! Form::text('search', request()->get('search'), ['class' => 'form-control', 'placeholder' => 'Pesquisar']) !!}
+				  
+				</div>
+				<div class="col-md-13">
+				{!! Form::submit('Pesquisar', ['class' => 'btn btn-block btn btn-dark']) !!}
+				</div>
+				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Posts recentes</h5>		<ul>
+			@foreach($blogs as $blog)
+					<li>
+				<a href="{{ $blog->title }}">{{ $blog->titulo }}</a>
+						</li>
+					
+						@endforeach	</ul>
+		</div>		<div id="categories-2" class="widget widget_categories"><h5>Categorias</h5>		<ul>
+		@forelse ($categories as $category)
+			<li class="cat-item cat-item-8"><a href="{{ url("/blog/{$category->name}") }}" >{{ $category->name }} ({{ $category->blogs_count }})</a></li>
+		@empty
+                                    <tr>
+                                        <td colspan="2">Nenhuma categoria disponível.</td>
+                                    </tr>
+        @endforelse</ul>
+</div><div id="mks_social_widget-2" class="widget mks_social_widget"><h5>Siga-nos!</h5>		
+				
+							<ul class="mks_social_widget_ul">
+		  			  		<li><a href="https://www.facebook.com/Business-Intelligence-108989637478937/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/facebook.png" class="img-fluid" alt="Responsive image"></span></a>
+		  			  		<a href="https://www.youtube.com/channel/UCjwFrqYRIfnY9AX4g8AR-GA" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/youtube.png" class="img-fluid" alt="Responsive image"></span></a>
+								<a href="https://www.instagram.com/businessintelligenceoficial/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/instagram.png" class="img-fluid" alt="Responsive image"></span></a>
+								<a href="https://gilberto-schneider.blogspot.com/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/blog2.png" class="img-fluid" alt="Responsive image"></span></a>
+							</li>
+		  			  </ul>
+		
 
-				</div><!-- /.row --><div class="row"></div>        </div>
-						           
-			        </section>
-				<section class="contactus section-image" id="contact" data-sorder="hestia_contact" style="background-image: url(img/contact.jpg)">
-						<div class="container">
-								<div class="row">
-					<div class="col-md-5">
-													<h2 class="hestia-title">Solicite um orçamento ou tire suas dúvidas</h2>
-																			<h5 class="description">Um porto seguro. Acreditamos que entregar um trabalho fiscal, contábil e trabalhista com excelente qualidade é fundamental para segurança e sustentabilidade financeira de qualquer empresa.</h5>
-												<div class="hestia-description"><div class="hestia-info info info-horizontal"><div class="description"><h4 class="info-title">Encontre nosso escritório</h4><p>Rua 6, 1460, Sala 32, Centro<br>Rio Claro, SP&nbsp; |&nbsp; CEP: 13500-190</p></div></div><div class="hestia-info info info-horizontal"><div class="description"><h4 class="info-title">Ligue-nos!<br>+55 19&nbsp;3534-9090</h4></div></div></div>					</div>
-											<div class="col-md-5 col-md-offset-2">
-							<div class="card card-contact">
-																	<div class="header header-raised header-primary text-center">
-										<h4 class="card-title">Se gostaria de mais informações, deixe-nos uma mensagem que um de nossos representantes entrará em contato:</h4>
-									</div>
-																<div class="content">
-									
-
-<div class="pirate_forms_wrap">
+		</div>		</aside><!-- .sidebar .widget-area -->
+	</div>
+				</div>
+		</div>
+	</div>
 	
-<form action="email.php"  method="post" class="bg-light p-5 contact-form">
-              <div class="form-group">
-                <input type="text"  name="Nome" class="form-control" placeholder="Nome" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="Email" class="form-control" placeholder="Email" required>
-              </div>
-              <div class="form-group">
-                <input type="text" name="Assunto" class="form-control" placeholder="Assunto" required>
-              </div>
-              <div class="form-group">
-                <textarea name="Mensagem" id="" cols="30" rows="7" class="form-control" placeholder="Mensagem" required></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Enviar" class="btn btn-primary py-3 px-5" onclick=msg();>
-              </div>
-            </form> 
-	<div class="pirate_forms_clearfix"></div>
-</div>
-
-								</div>
-							</div>
-						</div>
-									</div>
-							</div>
-					</section>
-						<footer class="footer footer-black footer-big">
+					<footer class="footer footer-black footer-big">
 				<div class="container">
-									<div class="hestia-bottom-footer-content">
-				© 2020 Business Intelligence &nbsp;|&nbsp; Todos os direitos reservados &nbsp;|&nbsp;
-			</div>
+					<div class="hestia-bottom-footer-content">
+						© 2020 Business Intelligence &nbsp;|&nbsp; Todos os direitos reservados &nbsp;|&nbsp;
+					</div>
 					</div>
 			</footer>
 		<div style="display: none">
 			</div>
 			</div>
-	
-
-
+	</div>
+<div id="xyJAHulEWQSH" class="xzrwXWDKgQjP" style="background:#dddddd;max-width:720px;z-index:9999999; "></div>   <script type="text/javascript">/* <![CDATA[ */var anOptions ={"anOptionChoice":"1","anOptionStats":"1","anOptionAdsSelectors":"","anOptionCookie":"1","anOptionCookieLife":"30","anPageRedirect":"","anPermalink":"undefined","anOptionModalEffect":"fadeAndPop","anOptionModalspeed":"350","anOptionModalclose":true,"anOptionModalOverlay":"rgba( 0,0,0,0.8 )","anAlternativeActivation":false,"anAlternativeElement":"","anAlternativeText":"<p><strong>AdBlock detected!<\/strong><\/p>\n<p>Please add <a title=\"https:\/\/getadmiral.com?utm_medium=plugin&utm_campaign=abn&utm_source=abnlinks\" href=\"themeisle.com\" target=\"_blank\">www.getadmiral.com<\/a> to your adblocking whitelist or disable your adblocking software.<\/p>\n","anAlternativeClone":"2","anAlternativeProperties":"","anOptionModalShowAfter":0,"anPageMD5":"","anSiteID":0,"modalHTML":"<div class=\"xzrwXWDKgQjP-default\">\n\t<h1 style=\"\">Adblocker detected! Please consider reading this notice.<\/h1>\n\t<p>We've detected that you are using AdBlock Plus or some other adblocking software which is preventing the page from fully loading.<\/p>\n<p>We don't have any banner, Flash, animation, obnoxious sound, or popup ad. We do not implement these annoying types of ads!<\/p>\n<p>We need money to operate the site, and almost all of it comes from our online advertising.<\/p>\n<p><strong>Please add <a title=\"Contec\" href=\"http:\/\/contecassessoria.com.br\" target=\"_blank\">contecassessoria.com.br<\/a> to your ad blocking whitelist or disable your adblocking software.<strong><\/p>\n<\/div>\n<a class=\"close-modal close-xzrwXWDKgQjP\">&#215;<\/a>"}/* ]]> */</script><div id="adsense" class="an-sponsored" style="position:absolute; z-index:-1; height:1px; width:1px; visibility: hidden; top: -1px; left: 0;"><img class="an-advert-banner" alt="sponsored" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><script type='text/javascript' src='http://contecassessoria.com.br/wp-content/plugins/visualizer/js/lib/clipboardjs/clipboard.min.js?ver=3.0.0'></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
@@ -396,4 +365,6 @@ Onde quer que você esteja, a Business estará contigo!</h5>
         text: 'Thumbnail'
       });
     </script>
-</body></html>
+</body>
+</html>
+

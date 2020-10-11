@@ -51,5 +51,19 @@
         <span class="help-block">
             <strong>{{ $errors->first('tags') }}</strong>
         </span>
+        <div class="row">
+        <div class="file-field input-field col m6 s12">
+            <div class="btn">
+                <input type="file" name="imagem">
+            </div>
+            @if(isset($post->imagem))
+            <img width="120" src="{{ asset($post->imagem) }}">
+        @endif
+        </div>
+        
     </div>
+    </div>
+    
 </div>
+
+

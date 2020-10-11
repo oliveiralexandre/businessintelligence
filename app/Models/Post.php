@@ -15,7 +15,7 @@ class Post extends Model
         'body',
         'user_id',
         'category_id',
-        'is_published',
+        'publicar',
         'imagem',
     ];
 
@@ -57,17 +57,17 @@ class Post extends Model
 
     public function scopePublished($query)
     {
-        return $query->where('is_published', true);
+        return $query->where('publicar', true);
     }
 
     public function scopeDrafted($query)
     {
-        return $query->where('is_published', false);
+        return $query->where('publicar', false);
     }
 
     public function getPublishedAttribute()
     {
-        return ($this->is_published) ? 'Sim' : 'Não';
+        return ($this->publicar) ? 'Sim' : 'Não';
     }
 
     public function getEtagAttribute()

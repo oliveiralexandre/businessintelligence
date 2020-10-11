@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Post;
+use App\Models\Blog;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -13,12 +13,12 @@ class Category extends Model
     {
         parent::boot();
         static::deleting(function ($category) {
-            $category->posts()->delete();
+            $category->blogs()->delete();
         });
     }
 
-    public function posts()
+    public function blogs()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Blog::class);
     }
 }

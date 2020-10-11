@@ -2,12 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Comment;
-use App\Models\Post;
-use App\Models\Tag;
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -23,15 +17,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        $posts = Post::count();
-        $comments = Comment::count();
-        $tags = Tag::count();
-        $categories = Category::count();
-
-        return view('home', get_defined_vars());
+        return view('admin.dashboard');
     }
 }

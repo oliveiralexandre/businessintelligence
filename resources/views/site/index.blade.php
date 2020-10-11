@@ -247,7 +247,8 @@ Clique no ícone de ajuda acima para saber mais.
 				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu-principal" class="nav navbar-nav navbar-right"><li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Home" href="">Home</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="#features">Soluções</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Blog" href="#blog">Blog</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
@@ -282,15 +283,11 @@ Clique no ícone de ajuda acima para saber mais.
 			            <div class="container">
 				                <div class="row">
                     <div class="">
-							<h5 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Há 30 anos no mercado, temos como prioridade oferecer as melhores soluções a você e seu negócio.<br>
-
-Atuamos com responsabilidade e profissionalismo de modo personalizado com cada cliente, buscando a solução mais adequada, da maneira mais rápida e menos onerosa possível.<br>
-
+							<h6 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Há 30 anos no mercado, temos como prioridade oferecer as melhores soluções a você e a seu negócio.<br>
+Atuamos com responsabilidade e profissionalismo de modo personalizado e individualizado com cada <br>cliente, buscando a solução mais adequada, da maneira mais rápida e menos onerosa possível.<br>
 Nossa equipe quer entender seu problema e dar suporte completo, contando com uma vasta e interdisciplinar experiência.<br>
-
-Por isso, estamos em constante aperfeiçoamento, tendo como valores fundamentais o compromisso e a excelência.
-
-Onde quer que você esteja, a Business estará contigo!</h5>
+Por isso, estamos em constante aperfeiçoamento, tendo como valores fundamentais o compromisso e a excelência.<br>
+Onde quer que você esteja, a Business Intelligence estará contigo!</h6>
 
 						                    </div>
                 </div>
@@ -302,13 +299,13 @@ Onde quer que você esteja, a Business estará contigo!</h5>
                     <div class="">
 						
 						<img src="img/servicos.png" class="img-fluid" alt="Responsive image">
-							<h5 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Com a Business Intelligence sua empresa conta com uma rede de profissionais atuantes em diversas áreas para soluções corporativas.<br>
-													Não há necessidade de substituir os administradores, advogados, contadores ou empregados.<br>
-													A Business atua em parceria com os profissionais de sua empresa, otimizando os resultados.</h5>
+							<h6 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section">Com a Business Intelligence sua empresa conta com uma rede de profissionais atuantes em <br>diversas áreas para soluções corporativas.<br>
+Não há necessidade de substituir os atuais administradores, advogados, contadores ou <br>empregados desses processos.<br>
+A Business Intelligence atua em parceria com os profissionais de sua empresa, otimizando os <br>resultados através da controladoria.</h6>
 						                    </div>
 					
                 </div>
-				  <div id="blog"></div><br>  <hr/>
+				  <div id="destaques"></div><br>  <hr/>
 				<section class="hestia-blogs" data-sorder="hestia_blog">
 						<div class="container">
 								<div class="row">
@@ -318,7 +315,23 @@ Onde quer que você esteja, a Business estará contigo!</h5>
 										</div>
 				</div>
 							<div class="hestia-blog-content">
-			<div class="row">		<img src="img/sobre.jpeg" class="img-fluid" alt="Responsive image">
+			<div class="row">		@foreach($blogs as $blog)<article class="col-md-4 hestia-blog-item">
+					<div class="card card-plain card-blog">
+													<div class="card-image">
+								<a href="" title="{{ $blog->title }}">
+									<img width="360" height="240" src="{{ $blog->imagem }}" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" </a>
+							</div>
+												<div class="content">
+							<h6 class="category"><a href="" title="Ver todos os posts em Estratégia Contábil"></a> </h6>
+							<h4 class="card-title">
+								<a class="blog-item-title-link" href="" title="{{ $blog->title }}" rel="bookmark">
+								{{ $blog->titulo }}								</a>
+							</h4>
+							<p class="card-description">{{ str_limit($blog->descricao, 100) }}	<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais…</a></p>
+						</div>
+					</div>
+				</article>
+				@endforeach
 								
 					</div><!-- /.row --><div class="row"></div>			</div>
 										</div>
@@ -333,7 +346,20 @@ Onde quer que você esteja, a Business estará contigo!</h5>
 					<div class="col-md-5">
 													<h2 class="hestia-title">Contato</h2>
 																			
-												<div class="hestia-description"><div class="hestia-info info info-horizontal"><div class="description"><h4 class="info-title"></h4><p><h5>Sede: Rua 6, 1460, Sala 32, Centro<br>Rio Claro, SP&nbsp; |&nbsp; CEP: 13500-190</p></div></div><div class="hestia-info info info-horizontal"><div class="description"><p class="description"><h5>Telefone e Whatsapp: +55 19 3534-9090<h5></p></div><div class="description"><p class="description"><h5>E-mail: atendimento@businessconsultoriarc.com.br</p></h5>
+												<div class="hestia-description"><div class="hestia-info info info-horizontal"><div class="description"><h4 class="info-title"></h4>
+												<p><h6>Sede: Rua 6, 1460, Sala 32, Centro<br>Rio Claro, SP&nbsp; |&nbsp; CEP: 13500-190</p>
+												<p><h6>Filial: Rua Marquês de Monte Alegre, nº 1010, Jardim Paulista<br>Piracicaba, SP&nbsp; |&nbsp; CEP: 13.401-070</p>
+												<p><h6>Filial: Rua Capitão Souza Franco, nº 881, sala 52, Bigorrilho<br>Curitiba, PR&nbsp; |&nbsp; CEP: 80.730-402</p>
+												</div></div><div class="hestia-info info info-horizontal"><div class="description"><p class="description"><h6>Telefone e Whatsapp: +55 19 3534-9090<h6></p></div><div class="description"><p class="description"><h6>E-mail: atendimento@bisolucoesempresariais.com.br</p></h6>
+												
+												
+
+
+
+
+
+
+
 												<a href="https://www.facebook.com/Business-Intelligence-108989637478937/" target="_blank">
 												<img src="img/midiassociais/facebook.png" class="img-fluid" alt="Responsive image">
 												</a>

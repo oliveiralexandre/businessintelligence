@@ -1,4 +1,4 @@
-@forelse ($post->comments as $comment)
+@forelse ($blog->comments as $comment)
     <div class="panel panel-default">
         <div class="panel-heading">
             {{ $comment->user->name }} says...

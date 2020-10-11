@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Post;
+use App\Models\Blog;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +11,7 @@ class Comment extends Model
     protected $fillable = [
         'body',
         'user_id',
-        'post_id',
+        'blog_id',
     ];
 
     protected static function boot()
@@ -25,9 +25,9 @@ class Comment extends Model
         });
     }
 
-    public function post()
+    public function blog()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Blog::class);
     }
 
     public function user()

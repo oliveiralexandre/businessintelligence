@@ -8,31 +8,31 @@
         <div class="row">
 
             <div class="col-md-12">
-                @forelse ($posts as $post)
+                @forelse ($blogs as $blog)
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            {{ $post->title }} - <small>by {{ $post->user->name }}</small>
+                            {{ $blog->title }} - <small>by {{ $blog->user->name }}</small>
 
                             <span class="pull-right">
-                                {{ $post->created_at->toDayDateTimeString() }}
+                                {{ $blog->created_at->toDayDateTimeString() }}
                             </span>
                         </div>
 
                         <div class="panel-body">
-                            <p>{{ str_limit($post->body, 200) }}</p>
+                            <p>{{ str_limit($blog->body, 200) }}</p>
                             <p>
                                 Tags:
-                                @forelse ($post->tags as $tag)
+                                @forelse ($blog->tags as $tag)
                                     <span class="label label-default">{{ $tag->name }}</span>
                                 @empty
                                     <span class="label label-danger">No tag found.</span>
                                 @endforelse
                             </p>
                             <p>
-                                <span class="btn btn-sm btn-success">{{ $post->category->name }}</span>
-                                <span class="btn btn-sm btn-info">Comments <span class="badge">{{ $post->comments_count }}</span></span>
+                                <span class="btn btn-sm btn-success">{{ $blog->category->name }}</span>
+                                <span class="btn btn-sm btn-info">Comments <span class="badge">{{ $blog->comments_count }}</span></span>
 
-                                <a href="{{ url("/posts/{$post->id}") }}" class="btn btn-sm btn-primary">See more</a>
+                                <a href="{{ url("/blogs/{$blog->id}") }}" class="btn btn-sm btn-primary">See more</a>
                             </p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                 @endforelse
 
                 <div align="center">
-                    {!! $posts->appends(['search' => request()->get('search')])->links() !!}
+                    {!! $blogs->appends(['search' => request()->get('search')])->links() !!}
                 </div>
 
             </div>
