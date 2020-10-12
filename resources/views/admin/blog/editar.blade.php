@@ -20,7 +20,7 @@
         <div class="col-lg-12 col-md-12">
           <div class="card">
             <div class="card-header card-header-info">
-              <h4 class="card-title">Gerenciar Publicações - Adicionar</h4>
+              <h4 class="card-title">Gerenciar Publicações - Editar</h4>
               <p class="card-category"></p>
             </div>
             <div class="card-body table-responsive">
@@ -42,7 +42,7 @@
 		<input type="hidden" name="_method" value="put">
 		@include('admin.blog._form')
 
-		<button class="btn blue">Atualizar</button>
+		<button class="btn btn-info">Atualizar</button>
 
 			
 		</form>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class BlogController extends Controller
@@ -48,8 +49,8 @@ class BlogController extends Controller
         
         $registro->save();
 
-        \Session::flash('mensagem',['msg'=>'Registro criado com sucesso!','class'=>'green white-text']);
-
+        Alert::success('Registro criado com sucesso!');
+       
         return redirect()->route('admin.blog');
         
     }
@@ -90,8 +91,7 @@ class BlogController extends Controller
 
         
         $registro ->update();
-
-        \Session::flash('mensagem',['msg'=>'Registro atualizado com sucesso!','class'=>'green white-text']);
+        Alert::success('Registro Atualizado com Sucesso!');
 
         return redirect()->route('admin.blog');
     }
@@ -101,8 +101,8 @@ class BlogController extends Controller
         
 
         Blog::find($id)->delete();
-
-        \Session::flash('mensagem',['msg'=>'Registro deletado com sucesso!','class'=>'green white-text']);
+        Alert::error('Registro deletado com sucesso!');
+       
         return redirect()->route('admin.blog');
 
     }

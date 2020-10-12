@@ -12,6 +12,7 @@ use App\Models\Tag;
 use App\Models\About;
 use App\Models\Servico;
 use App\Models\Destaque;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PaginasController extends Controller
 {

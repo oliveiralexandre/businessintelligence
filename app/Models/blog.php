@@ -71,6 +71,10 @@ class Blog extends Model
     {
         return hash('sha256', "product-{$this->id}-{$this->updated_at}");
     }
+    public function getTextHtmlAttribute()
+    {
+         return nl2br(e($this->text),false);
+    }
 
 }
 

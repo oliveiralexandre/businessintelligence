@@ -27,6 +27,7 @@
         @guest()
             @include('layouts.page_templates.guest')
         @endguest
+        @include('sweetalert::alert')
         
         
         <!--   Core JS Files   -->

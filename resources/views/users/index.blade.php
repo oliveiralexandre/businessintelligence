@@ -232,24 +232,22 @@
             <div class="card-body">
                               <div class="row">
                 <div class="col-12 text-right">
-                  <a href="#" class="btn btn-sm btn-primary">Add user</a>
+                  <a href="/register" class="btn btn-sm btn-primary">Adicionar Usuário</a>
                 </div>
               </div>
               <div class="table-responsive">
                 <table class="table">
                   <thead class=" text-primary">
                     <tr><th>
-                        Name
+                        Nome
                     </th>
                     <th>
                       Email
                     </th>
                     <th>
-                      Creation date
+                      Data de Cadastro
                     </th>
-                    <th class="text-right">
-                      Actions
-                    </th>
+                   
                   </tr></thead>
                   <tbody>@foreach($users as $user) 
                                      <tr>
@@ -260,14 +258,9 @@
                         {{ $user->email }}
                         </td>
                         <td>
-                          2020-02-24
+                        <time>{{ $user->created_at->format('d/m/Y') }}</time>
                         </td>
-                        <td class="td-actions text-right">
-                                                        <a rel="tooltip" class="btn btn-success btn-link" href="#" data-original-title="" title="">
-                              <i class="material-icons">edit</i>
-                              <div class="ripple-container"></div>
-                            </a>
-                                                    </td>
+                        
                       </tr>
                       @endforeach               </tbody>
                 </table>

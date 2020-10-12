@@ -305,10 +305,9 @@ Clique no ícone de ajuda acima para saber mais.
 		</div>
 
 		<div class="col-md-7">
-							<h6 class="category text-info"><a href="http://contecassessoria.com.br/category/estrategia-contabil/" title="Ver todos os posts em Estratégia Contábil" >{{ $blog->category->name }}</a> </h6>
-				<h2 class="card-title entry-title"><a href="http://contecassessoria.com.br/esocial-empresas/" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
-					<p>
-						{{ $blog->descricao }}					</p>
+							<h6 class="category text-info"><a href="" >{{ $blog->category->name }}</a> </h6>
+				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
+					<p>{!! nl2br(e($blog->descricao)) !!}</p>
 				</div>
 				<div class="author">
         Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>

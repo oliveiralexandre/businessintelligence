@@ -1,14 +1,20 @@
 <div class="input-field col m6 s12">
 
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Título</label>
-    <textarea class="form-control" name="titulo" id="exampleFormControlTextarea1" rows="3" value="{{ isset($registro->titulo) ? $registro->titulo : '' }}"></textarea>
-  </div>
-  <br>
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Descrição</label>
-    <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3" value="{{ isset($registro->descricao) ? $registro->descricao : '' }}"></textarea>
-  </div>
+<div class="form-group input-field">
+    <label>Título</label>
+	  <textarea name="titulo" class="form-control">
+        {{ isset($registro->titulo) ? $registro->titulo : '' }}
+  	</textarea>
+</div>
+
+<div class="form-group input-field">
+    <label>Descrição</label><p>
+	  <textarea name="descricao" class="form-control" rows="5">
+    {!! isset($registro->descricao) ? $registro->descricao : '' !!}
+         
+  	</textarea></p>
+</div>
+
 
 <div class="row">
 	<div class="file-field input-field col m6 s12">
