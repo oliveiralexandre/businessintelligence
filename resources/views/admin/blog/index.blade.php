@@ -29,23 +29,25 @@
 				<thead>
 					<tr>
 						<th>Id</th>
-						<th>Título</th>											
+						<th>Título</th>
+						<th>Categoria</th>										
 						<th>Imagem</th>
 						<th>Publicado</th>			
-						<th>Ação</th>
+						<th >Ação</th>
 					</tr>
 				</thead>
 				<tbody>
 				@foreach($registros as $registro)
 					<tr>
 						<td>{{ $registro->id }}</td>
-						<td>{{ $registro->titulo }}</td>						
+						<td>{{ $registro->titulo }}</td>
+						<td align="center">{{ $registro->categoria_id }}</td>							
 						<td><img width="100" src="{{asset($registro->imagem)}}"></td>
-						<td>{{ $registro->publicar }}</td>
+						<td align="center">{{ $registro->publicar }}</td>
 						<td>
 							<a class="btn btn-fab btn-round btn-success" href="{{ route('admin.blog.editar',$registro->id) }}"><i class="material-icons">edit</i></a>
 							
-							<a class="btn btn-fab btn-round btn-danger" href="javascript: if(confirm('Deletar esse registro?')){ window.location.href = '{{ route('admin.blog.deletar',$registro->id) }}' }"><i class="material-icons">delete</i></a>
+							<a class="btn btn-fab btn-round btn-danger" href="{{ route('admin.blog.deletar',$registro->id) }}"><i class="material-icons">delete</i></a>
 						</td>
 					</tr>
 				@endforeach

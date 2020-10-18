@@ -277,22 +277,29 @@ Clique no ícone de ajuda acima para saber mais.
 		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
 	<div class="row">@foreach($blogs as $blog)
 				<div class="col-md-5">
-			<div class="card-image">
+			<div class="card-image" style="width: 20rem;">
 				<a href="" title="{{ $blog->titulo }}">
-					<img width="360" height="240" src="" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280.jpg 1280w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-300x200.jpg 300w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-768x512.jpg 768w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-1024x682.jpg 1024w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-660x440.jpg 660w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-450x300.jpg 450w" sizes="(max-width: 360px) 100vw, 360px" />				</a>
+				<img src="{{ $blog->imagem }}" class="card-img-top" alt="...">
+								</a>
 			</div>
 		</div>
 
 		<div class="col-md-7">
-							<h6 class="category text-info"><a href="" title="" >{{ $blog->category->name }}</a> </h6>
+							<h6 class="category text-info"><a href="" title="" ></a> </h6>
 				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
 					<p>
 					{{ str_limit($blog->descricao, 100) }}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
 				</div>
 				<div class="author">
 					Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
+					<p>
+            Categoria: <span class="label label-success">{{ $blog->categoria->nome }}</span> <br>
+            </p>
 				</div><br><br><hr><br>
 			</div>	@endforeach
+		
+
+
 		</div>
 		<div align="center">
 			{!! $blogs->appends(['search' => request()->get('search')])->links() !!}
@@ -317,8 +324,8 @@ Clique no ícone de ajuda acima para saber mais.
 					
 						@endforeach	</ul>
 		</div>		<div id="categories-2" class="widget widget_categories"><h5>Categorias</h5>		<ul>
-		@forelse ($categories as $category)
-			<li class="cat-item cat-item-8"><a href="{{ url("/blog/{$category->name}") }}" >{{ $category->name }} ({{ $category->blogs_count }})</a></li>
+		@forelse ($categorias as $categoria)
+			<li class="cat-item cat-item-8"><a href="" >{{ $categoria->nome }} ({{ $categoria->blogs_count }})</a></li>
 		@empty
                                     <tr>
                                         <td colspan="2">Nenhuma categoria disponível.</td>

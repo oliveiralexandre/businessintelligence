@@ -4,11 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Models\Comment;
+use App\Models\Tag;
 use App\Models\Category;
+use App\Models\Categoria;
 
 class Blog extends Model
 {
     protected $table = "blog";
+
+    protected $fillable = [
+        'nome','categoria_id','user_id','titulo','descricao','imagem','publicar','categoria',
+    ];
 
 
     protected static function boot()
@@ -27,14 +34,19 @@ class Blog extends Model
         });
     }
 
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);   
+    } 
+
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Categoria::class);
     }
 
     public function categorie()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categoria::class);
     }
 
     public function user()

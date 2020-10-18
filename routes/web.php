@@ -73,6 +73,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::put('/blog/atualizar/{id}',['as'=>'admin.blog.atualizar', 'uses'=>'BlogController@atualizar']);
 	Route::get('/blog/deletar/{id}',['as'=>'admin.blog.deletar', 'uses'=>'BlogController@deletar']);
 
+	 //***Categoria***
+
+	Route::get('/categoria',['as'=>'admin.categoria', 'uses'=>'CategoriaController@index']);
+	Route::get('/categoria/adicionar',['as'=>'admin.categoria.adicionar', 'uses'=>'CategoriaController@adicionar']);
+	Route::post('/categoria/salvar',['as'=>'admin.categoria.salvar', 'uses'=>'CategoriaController@salvar']);
+	Route::get('/categoria/editar/{id}',['as'=>'admin.categoria.editar', 'uses'=>'CategoriaController@editar']);
+	Route::put('/categoria/atualizar/{id}',['as'=>'admin.categoria.atualizar', 'uses'=>'CategoriaController@atualizar']);
+	Route::get('/categoria/deletar/{id}',['as'=>'admin.categoria.deletar', 'uses'=>'CategoriaController@deletar']);
+
+
 });
 Auth::routes();
 
@@ -113,5 +123,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+
+	
 });
 

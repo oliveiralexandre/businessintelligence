@@ -292,20 +292,21 @@ Clique no ícone de ajuda acima para saber mais.
             <div class="col-md-12">
                 <div class="panel panel-default">
                 <div class="blog-post text-center">
-            <h2 class="blog-post-title">Blog ({{ $blog->titulo }})</h2>
+            <h2 class="blog-post-title">Blog</h2>
         </div>
                 <article
 		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
 	<div class="row">
-				<div class="col-md-5">
-			<div class="card-image">
+				<div class="col-md-4">
+			<div class="card-image" style="height:33rem; width:33rem;">
 				<a href="" title="{{ $blog->titulo }}">
-					<img width="360" height="240" src="" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" srcset="http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280.jpg 1280w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-300x200.jpg 300w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-768x512.jpg 768w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-1024x682.jpg 1024w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-660x440.jpg 660w, http://contecassessoria.com.br/wp-content/uploads/2015/10/boat-918840_1280-450x300.jpg 450w" sizes="(max-width: 360px) 100vw, 360px" />				</a>
+				<img src="{{ asset($blog->imagem) }}">
+				</a>
 			</div>
-		</div>
+	</div>
 
 		<div class="col-md-7">
-							<h6 class="category text-info"><a href="" >{{ $blog->category->name }}</a> </h6>
+							<h6 class="category text-info"><a href="" ></a> </h6>
 				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
 					<p>{!! nl2br(e($blog->descricao)) !!}</p>
 				</div>
@@ -313,13 +314,8 @@ Clique no ícone de ajuda acima para saber mais.
         Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
 				</div>
         <p>
-                            Categoria: <span class="label label-success">{{ $blog->category->name }}</span> <br>
-                            Tags:
-                            @forelse ($blog->tags as $tag)
-                                <span class="label label-default">{{ $tag->name }}</span>
-                            @empty
-                                <span class="label label-danger">No tag found.</span>
-                            @endforelse
+                            Categoria: <span class="label label-success">{{ $blog->categoria->nome }}</span> <br>
+                            
                         </p>
         
         

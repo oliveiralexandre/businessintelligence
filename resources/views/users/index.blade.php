@@ -113,12 +113,31 @@
                     </div>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.blog') }}">
-                      <i class="material-icons">content_paste</i>
-                        <p>{{ __('Blog') }}</p>
+                    <a class="nav-link" href="">
+                      <i class="material-icons">dashboard</i>
+                        <p>{{ __('Painel de Controle - Site') }}</p>
                     </a>
-                      
-                  </li><!-- 
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.blog') }}">
+                      <i class="material-icons">comment_bank</i>
+                        <p>{{ __('Blog') }}</p>
+                    </a>   
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.categoria') }}">
+                     <i class="material-icons">list</i>
+                       <p>{{ __('Categorias') }}</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                      <i class="material-icons">contact_support</i>
+                        <p>{{ __('Informações') }}</p>
+                    </a>
+                   </li>
+                  
+                  <!-- 
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('typography') }}">
                       <i class="material-icons">library_books</i>

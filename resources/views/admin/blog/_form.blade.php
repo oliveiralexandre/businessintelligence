@@ -16,6 +16,9 @@
 </div>
 
 
+
+
+
 <div class="row">
 	<div class="file-field input-field col m6 s12">
 		<div class="btn btn-info">
@@ -31,6 +34,15 @@
 	</div>
 </div>
 
+<div class="form-group input-field">
+    <label>Categorias</label><p>
+	<select name="categoria_id" id="categoria_id" class="form-control">
+                         @foreach($categorias as $categoria)    
+						 <option value="{{ $categoria->id }}" {{(isset($registro->categoria_id) && $registro->categoria_id == $categoria->id  ? 'selected' : '')}}>{{ $categoria->nome }}</option>
+                         @endforeach
+                    </select>
+</div>
+
 
 <div class="input-field">
     <select name="publicar">
@@ -39,6 +51,14 @@
     </select>
     <label>Publicar?</label>
 </div>
+
+
+
+
+
+
+
+
 
 
 

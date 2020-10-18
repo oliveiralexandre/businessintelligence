@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
-use App\Models\Category;
+use App\Models\Categoria;
 use App\Models\Comment;
 use App\Models\Blog;
 use App\Models\Tag;
@@ -79,19 +79,19 @@ class PaginasController extends Controller
     }
     public function blog(Request $request)
     {
-        $categories = Category::withCount('blogs')->paginate(10);
+        $categorias = Categoria::withCount('blogs')->paginate(10);
 
         $blogs = Blog::when($request->search, function ($query) use ($request) {
             $search = $request->search;
 
             return $query->where('titulo', 'like', "%$search%")
                             ->orWhere('descricao', 'like', "%$search%");
-        })->with('tags', 'category', 'user')
+        })->with('tags', 'categoria', 'user')
                     ->withCount('comments')
                     ->published()
                     ->simplePaginate(3);
 
-        return view('site.blog', compact('blogs','categories' ));
+        return view('site.blog', compact('blogs','categorias' ));
     }
     public function blogs(Blog $blog)
     {

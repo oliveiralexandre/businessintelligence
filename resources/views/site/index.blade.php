@@ -316,7 +316,7 @@ A Business Intelligence atua em parceria com os profissionais de sua empresa, ot
 				</div>
 							<div class="hestia-blog-content">
 			<div class="row">		@foreach($blogs as $blog)<article class="col-md-4 hestia-blog-item">
-					<div class="card card-plain card-blog">
+					<div class="card card-plain card-blog" style="width:35rem; height:58rem;">
 													<div class="card-image">
 								<a href="" title="{{ $blog->title }}">
 									<img width="360" height="240" src="{{ $blog->imagem }}" class="attachment-hestia-blog size-hestia-blog wp-post-image" alt="" </a>

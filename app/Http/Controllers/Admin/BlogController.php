@@ -3,24 +3,34 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Categoria;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
 class BlogController extends Controller
 {
-    public function index()
-    {        
-        $registros = Blog::all();
-        return view('admin.blog.index',compact('registros'));
+    private $categoria;
+    public function __construct(Categoria $categoria)
+    {
+        $this->categoria = $categoria;
     }
 
-    public function adicionar()
+    public function index(Categoria $categoria)
+    {        
+        $categoria = DB::table('categorias')->get();
+        $registros = Blog::all();
+        return view('admin.blog.index',compact('registros', 'categoria'));
+    }
+
+    public function adicionar(Categoria $categoria)
     {
-        return view('admin.blog.adicionar');
+        $categorias = DB::table('categorias')->get();
+        return view('admin.blog.adicionar',compact('categorias'));
     }
 
     public function salvar(Request $request)
@@ -33,6 +43,8 @@ class BlogController extends Controller
         $registro->titulo = $dados['titulo'];
         $registro->descricao = $dados['descricao'];
         $registro->publicar= $dados['publicar'];
+        $registro->categoria_id= $dados['categoria_id'];
+
        
 
 
@@ -58,12 +70,12 @@ class BlogController extends Controller
     public function editar($id)
     {
       
-
+        $categorias = Categoria::all();
         $registro = Blog::find($id);
 
     
 
-        return view('admin.blog.editar',compact('registro'));
+        return view('admin.blog.editar',compact('registro', 'categorias'));
         
     }
 
@@ -77,6 +89,8 @@ class BlogController extends Controller
         $registro->titulo = $dados['titulo'];
         $registro->descricao = $dados['descricao'];        
         $registro->publicar= $dados['publicar'];
+        $registro->categoria_id= $dados['categoria_id'];
+        
           
 
         $file = $request->file('imagem');
