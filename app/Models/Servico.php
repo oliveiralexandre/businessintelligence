@@ -13,6 +13,17 @@ class Servico extends Model
         'imagem',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($servico) {
+            if (is_null($servico->user_id)) {
+                $servico->user_id = auth()->user()->id;
+            }
+        });
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

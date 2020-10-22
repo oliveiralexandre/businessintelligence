@@ -17,14 +17,17 @@ Route::get('/', 'PaginasController@index');
 //Route::get('/destaques/{destaque}', 'PaginasController@destaque');
 
 Route::get('/blog', 'PaginasController@blog');
-
+Route::get('/blog/{blog}', 'BlogController@blog');
+Route::get('/informacoes', 'PaginasController@informacoes');
+Route::get('/informacoes/{informacoes}', 'InformacoesController@informacoes');
 //Route::get('/servicos', 'PaginasController@servicos');
 //Route::get('/servicos/{servico}', 'PaginasController@servico');
+
 //Route::get('/sobre', 'PaginasController@sobre');
 //Route::get('/contato', 'PaginasController@contato');
 Route::get('/obrigado', 'PaginasController@obrigado');
 //Route::get('/noticias', 'BlogController@index');
-Route::get('/blog/{blog}', 'BlogController@blog');
+
 //Route::post('/blogs/{post}/comment', 'BlogController@comment')->middleware('auth');
 
 

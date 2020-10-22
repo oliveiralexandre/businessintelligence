@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria;
+use App\Models\Informacoes;
 use App\Models\Comment;
 use App\Models\Blog;
 use App\Models\Tag;
 use App\Models\About;
 use App\Models\Servico;
 use App\Models\Destaque;
+use App\User;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PaginasController extends Controller
@@ -27,7 +29,6 @@ class PaginasController extends Controller
                     ->withCount('comments')
                     ->published()
                     ->simplePaginate(3);
-
 
         $destaques = DB::table('destaques')->paginate(3);
         return view('site.index', compact('destaques','blogs'));
@@ -54,7 +55,8 @@ class PaginasController extends Controller
     public function obrigado()
     {
         return view('site.obrigado');
-    }
+    }   
+
     public function servicos()
     {
         $servicos = DB::table('servicos')->paginate(3);
@@ -66,6 +68,7 @@ class PaginasController extends Controller
 
         return view('frontend.servico', compact('servico'));
     }
+
     public function sobre()
     {
         $abouts = About::all();
@@ -99,6 +102,31 @@ class PaginasController extends Controller
 
         return view('frontend.blog', compact('blog'));
     }
+
+    public function informacoes(Request $request)
+    {
+        $categorias = Categoria::withCount('informacao')->paginate(10);
+
+        $informacoes = Informacoes::when($request->search, function ($query) use ($request) {
+            $search = $request->search;
+
+            return $query->where('titulo', 'like', "%$search%")
+                            ->orWhere('descricao', 'like', "%$search%");
+        })->with('tags', 'categoria', 'user')
+                    ->withCount('comments')
+                    ->published()
+                    ->simplePaginate(3);
+
+        return view('site.informacoes', compact('informacoes','categorias' ));
+    }
+    public function informacao(Informacoes $informacoes)
+    {
+        $informacoes = $informacoes->load(['user']);
+
+        return view('frontend.informacoes', compact('informacoes'));
+    }
+
+
 
     public function post(Blog $blog)
     {

@@ -22,10 +22,10 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel="stylesheet" id="pirate_forms_front_styles-css" href="css/front.css" type="text/css" media="all">
-<link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css" type="text/css" media="all">
-<link rel="stylesheet" id="font-awesome-css" href="css/font-awesome.min.css" type="text/css" media="all">
-<link rel="stylesheet" id="hestia_style-css" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="pirate_forms_front_styles-css" href="../css/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="../css/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="../css/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="hestia_style-css" href="../css/style.css" type="text/css" media="all">
 <style id="hestia_style-inline-css" type="text/css">
 
 .header-filter-gradient { 
@@ -171,13 +171,13 @@ var pirateFormsObject = {"errors":"","spam":{"label":"I'm human!","value":"42591
 
 <style type="text/css" id="custom-background-css">
 body.custom-background{
-    background-image: url('img/mobile.png');
+    background-image: url('../img/mobile.png');
     background-repeat: no-repeat;
 	background-position: top;	 
 }
 @media (min-width: 1024px) {
 body.custom-background {
-        background-image: url('img/teste.png');
+        background-image: url('../img/teste.png');
         background-position: center; 
 		background-size: cover; 
 		background-repeat: no-repeat; 
@@ -238,14 +238,14 @@ Clique no ícone de ajuda acima para saber mais.
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 	</head>
 
-<body class="home page-template-default page page-id-179 custom-background wp-custom-logo blog-post">
+<body class="home page-template-default page page-id-179 custom-background custom-background2 wp-custom-logo blog-post">
 	<div class="wrapper">
 		<header class="header ">
 		<center><nav class="navbar navbar-default navbar-fixed-top navbar-color-on-scroll hestia_left navbar-scroll-point navbar-not-transparent">
 				<div class="container">
 			
 				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu-principal" class="nav navbar-nav navbar-right"><li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Home" href="/">Home</a></li>
-				<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="/#features">Soluções</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
@@ -259,111 +259,103 @@ Clique no ícone de ajuda acima para saber mais.
 			</button>
 				</div>
 			</nav></center>
-
-		<div id="primary" class="boxed-layout-header page-header header-small">
-		<div class="container">
-        <br><br><br><br><br><br><br><br><br><br><br><br>
-		</div>
-		
-		<div data-parallax="active" class="header-filter"></div>	</div>
-</header>
-<div class="main main-raised">
-	<div class="hestia-blogs">
-		<div class="container">
-			<div class="row">
-								<div class="col-md-8 blog-posts-wrap">
-					
-<article
-		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
-	<div class="row">@foreach($blogs as $blog)
-				<div class="col-md-5">
-			<div class="card-image" style="width: 20rem;">
-				<a href="" title="{{ $blog->titulo }}">
-				<img src="{{ $blog->imagem }}" class="card-img-top" alt="...">
-								</a>
+			
+			<div id="carousel-hestia-generic" class="carousel slide" data-ride="carousel">
+			<div class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+											<div class="item active">
+							<div class="page-header" style="height: 681.3px;">
+																<div class="container">
+																		<div class="row hestia-big-title-content">
+											
+										</div>
+																	</div>
+								<div class="header-filter"></div>
+															</div>
+						</div>
+											</div>
+				</div>
 			</div>
-		</div>
+					</header></div>
+
+   
+
+      
+        <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="card flex-md-row mb-4">
+          
+          <div class="card-body d-flex flex-column align-items-start">
+        <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                <div class="blog-post text-center">
+            <h2 class="blog-post-title">Informações Úteis</h2>
+        </div>
+                <article
+		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
+	<div class="row">
+				<div class="col-md-4">
+			<div class="card-image" style="height:33rem; width:33rem;">
+				<a href="" title="{{ $informacao->titulo }}">
+				<img src="{{ asset($informacao->imagem) }}">
+				</a>
+			</div>
+	</div>
 
 		<div class="col-md-7">
-							<h6 class="category text-info"><a href="" title="" ></a> </h6>
-				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
-					<p>
-					{{ str_limit($blog->descricao, 100) }}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
+							<h6 class="category text-info"><a href="" ></a> </h6>
+				<h2 class="card-title entry-title"><a href="" title="{{ $informacao->titulo }}" rel="bookmark">{{ $informacao->titulo }}</a></h2>				<div class="card-description">
+					<p>{!! nl2br(e($informacao->descricao)) !!}</p>
 				</div>
 				<div class="author">
-					Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
-					<p>
-            Categoria: <span class="label label-success">{{ $blog->categoria->nome }}</span> <br>
-            </p>
-				</div><br><br><hr><br>
-			</div>	@endforeach
+                Por <a href="" title="{{ $informacao->user->name }}" class="vcard author"><strong class="fn">{{ $informacao->user->name }}</strong></a>, <a href=""><time>{{ $informacao->created_at->format('d/m/Y') }}</time>  </a>
+				</div>
+        <p>
+                            Categoria: <span class="label label-success">{{ $informacao->categoria->nome }}</span> <br>
+                            
+                        </p>
+        
+        
+        <br><br><hr><br>
+			</div>	
+		</div>
 		
-
-
-		</div>
-		<div align="center">
-			{!! $blogs->appends(['search' => request()->get('search')])->links() !!}
-		</div>
 </article>
-				</div>
-					<div class="col-md-3 blog-sidebar-wrapper col-md-offset-1">
-		<aside id="secondary" class="blog-sidebar" role="complementary">
-			<div id="search-2" class="widget widget_search">{!! Form::open(['method' => 'GET', 'role' => 'form']) !!}
-				<div class="col-md-13">
-					{!! Form::text('search', request()->get('search'), ['class' => 'form-control', 'placeholder' => 'Pesquisar']) !!}
-				  
-				</div>
-				<div class="col-md-13">
-				{!! Form::submit('Pesquisar', ['class' => 'btn btn-block btn btn-dark']) !!}
-				</div>
-				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Posts recentes</h5>		<ul>
-			@foreach($blogs as $blog)
-					<li>
-				<a href="{{ url("/blog/{$blog->id}") }}">{{ $blog->titulo }}</a>
-						</li>
-					
-						@endforeach	</ul>
-		</div>		<div id="categories-2" class="widget widget_categories"><h5>Categorias</h5>		<ul>
-		@forelse ($categorias as $categoria)
-			<li class="cat-item cat-item-8"><a href="" >{{ $categoria->nome }} ({{ $categoria->blogs_count }})</a></li>
-		@empty
-                                    <tr>
-                                        <td colspan="2">Nenhuma categoria disponível.</td>
-                                    </tr>
-        @endforelse</ul>
-</div><div id="mks_social_widget-2" class="widget mks_social_widget"><h5>Siga-nos!</h5>		
-				
-							<ul class="mks_social_widget_ul">
-		  			  		<li><a href="https://www.facebook.com/Business-Intelligence-108989637478937/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/facebook.png" class="img-fluid" alt="Responsive image"></span></a>
-		  			  		<a href="https://www.youtube.com/channel/UCjwFrqYRIfnY9AX4g8AR-GA" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/youtube.png" class="img-fluid" alt="Responsive image"></span></a>
-								<a href="https://www.instagram.com/businessintelligenceoficial/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/instagram.png" class="img-fluid" alt="Responsive image"></span></a>
-								<a href="https://gilberto-schneider.blogspot.com/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/blog2.png" class="img-fluid" alt="Responsive image"></span></a>
-							</li>
-		  			  </ul>
-		
 
-		</div>		</aside><!-- .sidebar .widget-area -->
-	</div>
-				</div>
-		</div>
-	</div>
-	
-					<footer class="footer footer-black footer-big">
-				<div class="container">
-					<div class="hestia-bottom-footer-content">
-						© 2020 Business Intelligence &nbsp;|&nbsp; Todos os direitos reservados &nbsp;|&nbsp;
-					</div>
-					</div>
-			</footer>
-		<div style="display: none">
-			</div>
-			</div>
-	</div>
-<div id="xyJAHulEWQSH" class="xzrwXWDKgQjP" style="background:#dddddd;max-width:720px;z-index:9999999; "></div>   <script type="text/javascript">/* <![CDATA[ */var anOptions ={"anOptionChoice":"1","anOptionStats":"1","anOptionAdsSelectors":"","anOptionCookie":"1","anOptionCookieLife":"30","anPageRedirect":"","anPermalink":"undefined","anOptionModalEffect":"fadeAndPop","anOptionModalspeed":"350","anOptionModalclose":true,"anOptionModalOverlay":"rgba( 0,0,0,0.8 )","anAlternativeActivation":false,"anAlternativeElement":"","anAlternativeText":"<p><strong>AdBlock detected!<\/strong><\/p>\n<p>Please add <a title=\"https:\/\/getadmiral.com?utm_medium=plugin&utm_campaign=abn&utm_source=abnlinks\" href=\"themeisle.com\" target=\"_blank\">www.getadmiral.com<\/a> to your adblocking whitelist or disable your adblocking software.<\/p>\n","anAlternativeClone":"2","anAlternativeProperties":"","anOptionModalShowAfter":0,"anPageMD5":"","anSiteID":0,"modalHTML":"<div class=\"xzrwXWDKgQjP-default\">\n\t<h1 style=\"\">Adblocker detected! Please consider reading this notice.<\/h1>\n\t<p>We've detected that you are using AdBlock Plus or some other adblocking software which is preventing the page from fully loading.<\/p>\n<p>We don't have any banner, Flash, animation, obnoxious sound, or popup ad. We do not implement these annoying types of ads!<\/p>\n<p>We need money to operate the site, and almost all of it comes from our online advertising.<\/p>\n<p><strong>Please add <a title=\"Contec\" href=\"http:\/\/contecassessoria.com.br\" target=\"_blank\">contecassessoria.com.br<\/a> to your ad blocking whitelist or disable your adblocking software.<strong><\/p>\n<\/div>\n<a class=\"close-modal close-xzrwXWDKgQjP\">&#215;<\/a>"}/* ]]> */</script><div id="adsense" class="an-sponsored" style="position:absolute; z-index:-1; height:1px; width:1px; visibility: hidden; top: -1px; left: 0;"><img class="an-advert-banner" alt="sponsored" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></div><script type='text/javascript' src='http://contecassessoria.com.br/wp-content/plugins/visualizer/js/lib/clipboardjs/clipboard.min.js?ver=3.0.0'></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+                    
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div></div></div>
+
+    <footer class="blog-footer bg-dark">
+   
+    © 2020 Copyright Business Intelligence
+    <a class="grey-text text-lighten-4 right" href=""><i class="material-icons"></i></a>
+    </div>
+  </div>
+      </div>
+
+      
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="js/holder.min.js"></script>
     <script>
       Holder.addTheme('thumb', {
@@ -372,6 +364,5 @@ Clique no ícone de ajuda acima para saber mais.
         text: 'Thumbnail'
       });
     </script>
-</body>
+  </body>
 </html>
-

@@ -272,28 +272,36 @@ Clique no ícone de ajuda acima para saber mais.
 		<div class="container">
 			<div class="row">
 								<div class="col-md-8 blog-posts-wrap">
-					
+								<div class="col-md-12">
+                <div class="panel panel-default">
+                <div class="blog-post text-center">
+            <h2 class="blog-post-title">Informações Úteis</h2>
+        </div>
+		</div></div>	
 <article
 		id="post-118" class="card card-plain card-blog post-118 post type-post status-publish format-standard has-post-thumbnail hentry category-estrategia-contabil">
-	<div class="row">@foreach($blogs as $blog)
+	<div class="row">@foreach($informacoes as $informacao)
 				<div class="col-md-5">
 			<div class="card-image" style="width: 20rem;">
-				<a href="" title="{{ $blog->titulo }}">
-				<img src="{{ $blog->imagem }}" class="card-img-top" alt="...">
+				<a href="" title="{{ $informacao->titulo }}">
+				<img src="{{ $informacao->imagem }}" class="card-img-top" alt="...">
 								</a>
 			</div>
 		</div>
 
 		<div class="col-md-7">
 							<h6 class="category text-info"><a href="" title="" ></a> </h6>
-				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
+				<h2 class="card-title entry-title"><a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulo }}" rel="bookmark">{{ $informacao->titulo }}</a></h2>				<div class="card-description">
 					<p>
-					{{ str_limit($blog->descricao, 100) }}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
+					{{ str_limit($informacao->descricao, 250) }}</p>
 				</div>
+
+				
 				<div class="author">
-					Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
+					Fonte: <a href="{{ $informacao->url }}" target="_blank" title=" ACESSE: {{ $informacao->titulourl }}" class="vcard author"><strong class="fn">{{ $informacao->titulourl }}</strong></a></a><br><br>
+					Por <a title="{{ $informacao->user->name }}" class="vcard author"><strong class="fn">{{ $informacao->user->name }}</strong></a>, <a><time>{{ $informacao->created_at->format('d/m/Y') }}</time>  </a>
 					<p>
-            Categoria: <span class="label label-success">{{ $blog->categoria->nome }}</span> <br>
+           
             </p>
 				</div><br><br><hr><br>
 			</div>	@endforeach
@@ -302,7 +310,7 @@ Clique no ícone de ajuda acima para saber mais.
 
 		</div>
 		<div align="center">
-			{!! $blogs->appends(['search' => request()->get('search')])->links() !!}
+			{!! $informacoes->appends(['search' => request()->get('search')])->links() !!}
 		</div>
 </article>
 				</div>
@@ -316,22 +324,14 @@ Clique no ícone de ajuda acima para saber mais.
 				<div class="col-md-13">
 				{!! Form::submit('Pesquisar', ['class' => 'btn btn-block btn btn-dark']) !!}
 				</div>
-				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Posts recentes</h5>		<ul>
-			@foreach($blogs as $blog)
+				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Informações recentes</h5>		<ul>
+			@foreach($informacoes as $informacao)
 					<li>
-				<a href="{{ url("/blog/{$blog->id}") }}">{{ $blog->titulo }}</a>
+				<a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulourl }}">{{ $informacao->titulo }}</a> 
 						</li>
 					
 						@endforeach	</ul>
-		</div>		<div id="categories-2" class="widget widget_categories"><h5>Categorias</h5>		<ul>
-		@forelse ($categorias as $categoria)
-			<li class="cat-item cat-item-8"><a href="" >{{ $categoria->nome }} ({{ $categoria->blogs_count }})</a></li>
-		@empty
-                                    <tr>
-                                        <td colspan="2">Nenhuma categoria disponível.</td>
-                                    </tr>
-        @endforelse</ul>
-</div><div id="mks_social_widget-2" class="widget mks_social_widget"><h5>Siga-nos!</h5>		
+		</div>		<div id="mks_social_widget-2" class="widget mks_social_widget"><h5>Siga-nos!</h5>		
 				
 							<ul class="mks_social_widget_ul">
 		  			  		<li><a href="https://www.facebook.com/Business-Intelligence-108989637478937/" target="_blank" style="width: 38px; height: 38px; font-size: 18px;"><span><img src="img/midiassociais/facebook.png" class="img-fluid" alt="Responsive image"></span></a>
