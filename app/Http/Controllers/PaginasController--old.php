@@ -28,11 +28,11 @@ class PaginasController extends Controller
         })->with('tags', 'category', 'user')
                     ->withCount('comments')
                     ->published()
-                    ->orderBy('id', 'DESC')
                     ->simplePaginate(3);
-                    
 
-        return view('site.index', compact('blogs'));
+        //$destaques = DB::table('destaques')->paginate(3);
+        $destaques = Destaque::orderBy('id', 'DESC')->get();
+        return view('site.index', compact('destaques','blogs'));
     }
     public function noticias(Request $request)
     {
@@ -93,7 +93,6 @@ class PaginasController extends Controller
         })->with('tags', 'categoria', 'user')
                     ->withCount('comments')
                     ->published()
-                    ->orderBy('id', 'DESC')
                     ->simplePaginate(3);
 
         return view('site.blog', compact('blogs','categorias' ));
@@ -117,7 +116,6 @@ class PaginasController extends Controller
         })->with('tags', 'categoria', 'user')
                     ->withCount('comments')
                     ->published()
-                    ->orderBy('id', 'DESC')
                     ->simplePaginate(3);
 
         return view('site.informacoes', compact('informacoes','categorias' ));

@@ -248,7 +248,7 @@ Clique no ícone de ajuda acima para saber mais.
 				<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="/#features">Soluções</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="/informacoes">Informações</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="/#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
@@ -291,9 +291,9 @@ Clique no ícone de ajuda acima para saber mais.
 
 		<div class="col-md-7">
 							<h6 class="category text-info"><a href="" title="" ></a> </h6>
-				<h2 class="card-title entry-title"><a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulo }}" rel="bookmark">{{ $informacao->titulo }}</a></h2>				<div class="card-description">
+				<h2 class="card-title entry-title"><a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulo }}" rel="bookmark">{!! $informacao->titulo !!}</a></h2>				<div class="card-description">
 					<p>
-					{{ str_limit($informacao->descricao, 250) }}</p>
+					{!! ($informacao->descricao) !!}</p>
 				</div>
 
 				
@@ -327,7 +327,7 @@ Clique no ícone de ajuda acima para saber mais.
 				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Informações recentes</h5>		<ul>
 			@foreach($informacoes as $informacao)
 					<li>
-				<a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulourl }}">{{ $informacao->titulo }}</a> 
+				<a href="{{ $informacao->url }}" target="_blank" title="{{ $informacao->titulourl }}">{!! $informacao->titulo !!}</a> 
 						</li>
 					
 						@endforeach	</ul>

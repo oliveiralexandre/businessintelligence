@@ -17,6 +17,7 @@ class InformacoesController extends Controller
         })->with('tags', 'category', 'user')
                     ->withCount('comments')
                     ->published()
+                    ->orderBy('id', 'DESC')
                     ->simplePaginate(5);
 
         return view('frontend.index', compact('informacoes'));

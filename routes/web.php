@@ -85,6 +85,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::put('/categoria/atualizar/{id}',['as'=>'admin.categoria.atualizar', 'uses'=>'CategoriaController@atualizar']);
 	Route::get('/categoria/deletar/{id}',['as'=>'admin.categoria.deletar', 'uses'=>'CategoriaController@deletar']);
 
+	 //***Informações***
+
+	 Route::get('/informacoes',['as'=>'admin.informacoes', 'uses'=>'InformacoesController@index']);
+	 Route::get('/informacoes/adicionar',['as'=>'admin.informacoes.adicionar', 'uses'=>'InformacoesController@adicionar']);
+	 Route::post('/informacoes/salvar',['as'=>'admin.informacoes.salvar', 'uses'=>'InformacoesController@salvar']);
+	 Route::get('/informacoes/editar/{id}',['as'=>'admin.informacoes.editar', 'uses'=>'InformacoesController@editar']);
+	 Route::put('/informacoes/atualizar/{id}',['as'=>'admin.informacoes.atualizar', 'uses'=>'InformacoesController@atualizar']);
+	 Route::get('/informacoes/deletar/{id}',['as'=>'admin.informacoes.deletar', 'uses'=>'InformacoesController@deletar']);
+
 
 });
 Auth::routes();

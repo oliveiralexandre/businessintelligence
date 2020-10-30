@@ -169,6 +169,8 @@ var pirateFormsObject = {"errors":"","spam":{"label":"I'm human!","value":"42591
 </script>
 
 
+
+
 <style type="text/css" id="custom-background-css">
 body.custom-background{
     background-image: url('img/mobile.png');
@@ -248,7 +250,7 @@ Clique no ícone de ajuda acima para saber mais.
 				<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="/#features">Soluções</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="/informacoes">Informações</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="/#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
@@ -286,9 +288,9 @@ Clique no ícone de ajuda acima para saber mais.
 
 		<div class="col-md-7">
 							<h6 class="category text-info"><a href="" title="" ></a> </h6>
-				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{{ $blog->titulo }}</a></h2>				<div class="card-description">
+				<h2 class="card-title entry-title"><a href="" title="{{ $blog->titulo }}" rel="bookmark">{!! $blog->titulo !!}</a></h2>				<div class="card-description">
 					<p>
-					{{ str_limit($blog->descricao, 100) }}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
+					{!! str_limit($blog->descricao, 100) !!}<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais&hellip;</a>					</p>
 				</div>
 				<div class="author">
 					Por <a href="" title="{{ $blog->user->name }}" class="vcard author"><strong class="fn">{{ $blog->user->name }}</strong></a>, <a href=""><time>{{ $blog->created_at->format('d/m/Y') }}</time>  </a>
@@ -319,7 +321,7 @@ Clique no ícone de ajuda acima para saber mais.
 				{!! Form::close() !!}	</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h5>Posts recentes</h5>		<ul>
 			@foreach($blogs as $blog)
 					<li>
-				<a href="{{ url("/blog/{$blog->id}") }}">{{ $blog->titulo }}</a>
+				<a href="{{ url("/blog/{$blog->id}") }}">{!! $blog->titulo !!}</a>
 						</li>
 					
 						@endforeach	</ul>

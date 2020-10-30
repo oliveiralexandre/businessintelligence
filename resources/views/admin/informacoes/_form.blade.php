@@ -15,6 +15,20 @@
   	</textarea></p>
 </div>
 
+<div class="form-group input-field">
+    <label>Título Fonte</label>
+	  <textarea name="titulourl" class="form-control">
+        {{ isset($registro->titulourl) ? $registro->titulourl : '' }}
+  	</textarea>
+</div>
+
+<div class="form-group input-field">
+    <label>Url Fonte</label>
+	  <textarea name="url" class="form-control">
+        {{ isset($registro->url) ? $registro->url : '' }}
+  	</textarea>
+</div>
+
 
 
 
@@ -32,15 +46,6 @@
 		<img width="120" src="{{ asset($registro->imagem) }}">
 	@endif
 	</div>
-</div>
-
-<div class="form-group input-field">
-    <label>Categorias</label><p>
-	<select name="categoria_id" id="categoria_id" class="form-control">
-                         @foreach($categorias as $categoria)    
-						 <option value="{{ $categoria->id }}" {{(isset($registro->categoria_id) && $registro->categoria_id == $categoria->id  ? 'selected' : '')}}>{{ $categoria->nome }}</option>
-                         @endforeach
-                    </select>
 </div>
 
 

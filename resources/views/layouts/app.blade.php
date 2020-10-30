@@ -30,6 +30,9 @@
         @include('sweetalert::alert')
         
         
+        <!--   ckeditor   -->
+        <script src="//cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
+
         <!--   Core JS Files   -->
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('material') }}/js/core/popper.min.js"></script>

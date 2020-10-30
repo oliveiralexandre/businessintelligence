@@ -248,7 +248,7 @@ Clique no ícone de ajuda acima para saber mais.
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="#features">Soluções</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Destaques" href="/blog">Blog</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="">Informações</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="/informacoes">Informações</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
@@ -325,9 +325,9 @@ A Business Intelligence atua em parceria com os profissionais de sua empresa, ot
 							<h6 class="category"><a href="" title="Ver todos os posts em Estratégia Contábil"></a> </h6>
 							<h4 class="card-title">
 								<a class="blog-item-title-link" href="" title="{{ $blog->title }}" rel="bookmark">
-								{{ $blog->titulo }}								</a>
+								{!! $blog->titulo!!}								</a>
 							</h4>
-							<p class="card-description">{{ str_limit($blog->descricao, 100) }}	<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais…</a></p>
+							<p class="card-description">{!! str_limit($blog->descricao, 100)!!}	<a class="moretag" href="{{ url("/blog/{$blog->id}") }}"> Leia mais…</a></p>
 						</div>
 					</div>
 				</article>

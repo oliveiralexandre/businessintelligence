@@ -234,7 +234,8 @@ Clique no ícone de ajuda acima para saber mais.
 				<div id="main-navigation" class="collapse navbar-collapse"><ul id="menu-menu-principal" class="nav navbar-nav navbar-right"><li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Home" href="/">Home</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Quem Somos" href="/#sobre">Quem Somos</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Soluções" href="/#features">Soluções</a></li>
-<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Blog" href="/#blog">Blog</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Blog" href="/blog">Blog</a></li>
+<li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Informações" href="/informacoes">Informações</a></li>
 <li id="main-navigation" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-192 active on-section"><a title="Contato" href="/#contact">Contato</a></li>
 
 </ul></div>						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
